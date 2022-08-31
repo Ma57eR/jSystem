@@ -1,4 +1,4 @@
-package jsystem.models.entity;
+package jsystem.models.service;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -7,15 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public abstract class BaseEntity {
-
+public abstract class BaseServiceModel {
     @Id
     @GeneratedValue(generator = "uuid-string")
     @GenericGenerator(name = "uuid-string", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
-
-    public BaseEntity() {
-    }
 
     public String getId() {
         return id;
